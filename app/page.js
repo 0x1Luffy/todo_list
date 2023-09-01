@@ -8,8 +8,10 @@ const page = () => {
     </div>
 
       <div className='main-wrapper flex justify-center items-center'>
-        <form className='bg-gray-700 w-full h-[760px] m-10 rounded-xl'>
-
+        <form className='bg-gray-700 w-full h-[760px] m-10 rounded-xl flex justify-center items-center flex-col'>
+          <input type='text' placeholder='Enter Your Task ' className='text-2xl border-green-400 border-2 rounded-md'></input>
+          <input type='text' placeholder='Explain Your Task ' className='text-2xl border-green-400 border-2 rounded-md'></input>
+          <input type='button'  className='h-5 w-5 border-green-400 border-2 rounded-md'></input>
         </form>
       </div>
       </>
