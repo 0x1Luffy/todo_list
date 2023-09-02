@@ -20,7 +20,7 @@ const page = () => {
     renderTask = mainTask.map((t,i)=>{
       return (
 
-        <li>
+        <li key={i}>
           <div className='flex items-center'>
           <div className='text-black font-semibold text-3xl break-words flex justify-between '> <h5>{t.title} :-  {t.desc}</h5>
           </div>
