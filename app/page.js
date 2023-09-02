@@ -11,6 +11,12 @@ const page = () => {
             settitle("")
             setdesc("")
             console.log(mainTask)
+  };
+
+  const deleteHandler = (i)=>{
+        let copyTask = [...mainTask]
+        copyTask.splice(i,1)
+        setmainTask(copyTask)
   }
 
   let renderTask = <h3>NO TASK AVAILABLE</h3>
@@ -25,7 +31,11 @@ const page = () => {
           <div className='text-black font-semibold text-3xl break-words flex justify-between '> <h5>{t.title} :-  {t.desc}</h5>
           </div>
           <div className='flex ml-16 w-auto justify-between bg-red-400 rounded-md text-white px-2 py-2'>
-          <button>
+          <button onClick={
+            () =>{
+              deleteHandler(i)
+            }
+          }>
           DELETE
           </button>
           </div>
