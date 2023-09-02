@@ -27,10 +27,10 @@ const page = () => {
       return (
 
         <li key={i}>
-          <div className='flex items-center'>
-          <div className='text-black font-semibold text-3xl break-words flex justify-between '> <h5>{t.title} :-  {t.desc}</h5>
+          <div className='flex items-center content-center break-words justify-between '>
+          <div className='text-black font-semibold text-3xl text-center justify-between'> <h5>{t.title} :-  {t.desc}</h5>
           </div>
-          <div className='flex ml-16 w-auto justify-between bg-red-400 rounded-md text-white px-2 py-2'>
+          <div className='flex w-auto ml-5 bg-red-400 rounded-md text-white px-2 py-2'>
           <button onClick={
             () =>{
               deleteHandler(i)
