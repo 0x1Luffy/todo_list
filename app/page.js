@@ -7,7 +7,10 @@ const page = () => {
   const [desc, setdesc] = useState("")
   const submitHandler=(e)=>{
     e.preventDefault();
-            console.log("testing")
+            console.log(title)
+            console.log(desc)
+            settitle("")
+            setdesc("")
   }
   return (
     <>
