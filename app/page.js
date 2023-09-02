@@ -34,8 +34,11 @@ const page = () => {
               setdesc(e.target.value)
             }}
           />
-          <input type='submit'  className=' h-16 w-28 border-green-400 bg-zinc-600 text-white font-extrabold border-2 rounded-md ml-10 mt-28' />
+          <input type='submit' value={"ADD TASK"}  className=' h-16 w-28 border-green-400 bg-zinc-600 text-white font-extrabold border-2 rounded-md ml-10 mt-28' />
         </form>
+        <div className='h-20 w-[1833px] bg-cyan-500 absolute flex items-center justify-center font-extrabold text-black text-3xl'>
+                <h3>NO TASK AVAILABLE</h3>
+      </div>
       </div>
       </>
   )
