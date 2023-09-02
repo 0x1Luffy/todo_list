@@ -8,13 +8,26 @@ const page = () => {
   const [mainTask, setmainTask] = useState([])
   const submitHandler=(e)=>{
     e.preventDefault();
-            console.log(title)
-            console.log(desc)
+            setmainTask([...mainTask, {title,desc}])   // mainTask me title aur dec liya aur fir setTask se usko UI pe Render Kiya
             settitle("")
             setdesc("")
+            console.log(mainTask)
   }
 
   let renderTask = <h3>NO TASK AVAILABLE</h3>
+
+  renderTask = mainTask.map((t,i)=>{
+    return (
+    <div>
+      <h5>{t.title} :-  {t.desc}</h5>
+    </div>
+    );
+  });
+
+
+
+
+
   return (
     
     <>
@@ -40,11 +53,19 @@ const page = () => {
           />
           <input type='submit' value={"ADD TASK"}  className=' h-16 w-28 border-green-400 bg-zinc-600 text-white font-extrabold border-2 rounded-md ml-10 mt-28' />
         </form>
-        <div className='h-20 w-[1833px] bg-cyan-500 absolute flex items-center justify-center font-extrabold text-black text-3xl'>
-                <ul>
-                  {renderTask}
+        <div className='h-96 w-96 bg-cyan-500 absolute flex  justify-center font-extrabold text-black text-xl rounded-xl mt-24'>
+            <div className='flex justify-start'>
+            <h3 className='text-red-600 font-extrabold mt-5'>TASK PENDING</h3>
+            </div>
+        </div>
+            <div className='absolute font-bold text-xl '>
+            <ul>
+            <li>
+            {renderTask}
+            </li>
+                 
                 </ul>
-      </div>
+            </div>
       </div>
       </>
   )
