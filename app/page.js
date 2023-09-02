@@ -1,4 +1,5 @@
 "use client"
+import { Cagliostro } from 'next/font/google'
 import React, { useState } from 'react'
 
 const page = () => {
@@ -16,9 +17,15 @@ const page = () => {
           <input type='text' placeholder='Enter Your Task ' className=' h-32 w-80 text-2xl border-green-400 border-2 rounded-md mt-20 text-center'
           
             value={title}
+            onChange={(e)=>{
+              settitle(e.target.value)
+            }}  
           />
           <input type='text' placeholder='Explain Your Task ' className='  h-32 w-80 text-2xl border-green-400 border-2 rounded-md ml-10 mt-20 text-center'
             value={desc}
+            onChange={(e)=>{
+              setdesc(e.target.value)
+            }}
           />
           <input type='submit'  className=' h-16 w-28 border-green-400 bg-zinc-600 text-white font-extrabold border-2 rounded-md ml-10 mt-28' />
         </form>
