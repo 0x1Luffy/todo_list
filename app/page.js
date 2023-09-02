@@ -19,9 +19,23 @@ const page = () => {
   {
     renderTask = mainTask.map((t,i)=>{
       return (
-      <div>
-        <h5 className='text-black font-semibold text-3xl break-words'>{t.title} :-  {t.desc}</h5>
-      </div>
+
+        <li>
+          <div className='flex items-center'>
+          <div className='text-black font-semibold text-3xl break-words flex justify-between '> <h5>{t.title} :-  {t.desc}</h5>
+          </div>
+          <div className='flex ml-16 w-auto justify-between bg-red-400 rounded-md text-white px-2 py-2'>
+          <button>
+          DELETE
+          </button>
+          </div>
+            
+              
+          </div>
+          </li>
+          
+        
+
       );
     });
   }
@@ -61,9 +75,8 @@ const page = () => {
             </div>
             <div className='absolute font-bold text-xl mt-28 text-center'>
             <ul>
-            <li>
             {renderTask}
-            </li>
+            
                  
                 </ul>
             </div>
