@@ -5,6 +5,10 @@ import React, { useState } from 'react'
 const page = () => {
   const [title, settitle] = useState("")
   const [desc, setdesc] = useState("")
+  const submitHandler=(e)=>{
+    e.preventDefault();
+            console.log("testing")
+  }
   return (
     <>
     <div className='wrapper h-full w-full flex items-center justify-center'>
@@ -12,7 +16,7 @@ const page = () => {
     </div>
 
       <div className='main-wrapper flex justify-center items-center'>
-        <form className='bg-gray-700 w-full h-[760px] m-10 rounded-xl flex justify-center'>
+        <form onSubmit={submitHandler} className='bg-gray-700 w-full h-[760px] m-10 rounded-xl flex justify-center'>
 
           <input type='text' placeholder='Enter Your Task ' className=' h-32 w-80 text-2xl border-green-400 border-2 rounded-md mt-20 text-center'
           
