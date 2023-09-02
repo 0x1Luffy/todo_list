@@ -1,5 +1,4 @@
 "use client"
-import { Cagliostro } from 'next/font/google'
 import React, { useState } from 'react'
 
 const page = () => {
@@ -16,13 +15,16 @@ const page = () => {
 
   let renderTask = <h3>NO TASK AVAILABLE</h3>
 
-  renderTask = mainTask.map((t,i)=>{
-    return (
-    <div>
-      <h5>{t.title} :-  {t.desc}</h5>
-    </div>
-    );
-  });
+  if (mainTask.length >0)
+  {
+    renderTask = mainTask.map((t,i)=>{
+      return (
+      <div>
+        <h5 className='text-black font-semibold text-3xl break-words'>{t.title} :-  {t.desc}</h5>
+      </div>
+      );
+    });
+  }
 
 
 
@@ -53,12 +55,11 @@ const page = () => {
           />
           <input type='submit' value={"ADD TASK"}  className=' h-16 w-28 border-green-400 bg-zinc-600 text-white font-extrabold border-2 rounded-md ml-10 mt-28' />
         </form>
-        <div className='h-96 w-96 bg-cyan-500 absolute flex  justify-center font-extrabold text-black text-xl rounded-xl mt-24'>
+        <div className='h-96 w-96 bg-cyan-500 absolute flex  justify-center font-extrabold text-black text-xl rounded-xl mt-24 break-normal'>
             <div className='flex justify-start'>
-            <h3 className='text-red-600 font-extrabold mt-5'>TASK PENDING</h3>
+            <h3 className='text-red-600 font-extrabold mt-5'>TO DO TASKS</h3>
             </div>
-        </div>
-            <div className='absolute font-bold text-xl '>
+            <div className='absolute font-bold text-xl mt-28 text-center'>
             <ul>
             <li>
             {renderTask}
@@ -66,6 +67,8 @@ const page = () => {
                  
                 </ul>
             </div>
+        </div>
+            
       </div>
       </>
   )
